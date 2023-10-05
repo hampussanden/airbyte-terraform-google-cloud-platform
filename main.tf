@@ -32,7 +32,7 @@ resource "google_project_iam_member" "project" {
 resource "google_compute_network" "vpc" {
   name                    = "airbyte-network"
   auto_create_subnetworks = "false"
-
+  depends_on = [google_project_service.api_services]
 }
 
 # Create a Subnet

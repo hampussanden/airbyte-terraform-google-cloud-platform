@@ -48,10 +48,10 @@ else
   gcloud iam service-accounts keys create service_account.json \
     --iam-account="${PROJECT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
 
-  # Grant the Editor role
+  # Grant the Owner role
   gcloud projects add-iam-policy-binding ${PROJECT_ID} \
     --member="serviceAccount:${PROJECT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com" \
-    --role="roles/editor"
+    --role="roles/owner"
 
   echo "Service account created"
 fi

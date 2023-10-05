@@ -11,19 +11,19 @@ variable "zone" {
 }
 
 variable "machine_type" {
-  default = "e2-medium"
+  default     = "e2-medium"
   description = "Google Cloud Platform Machine Type"
-  type = string
+  type        = string
 }
 
 variable "project_id" {
-  default     = "tcb-project-371706-400508"
+  default     = "airbyte-project-371706-400508"
   description = "Google Cloud Platform Project ID"
   type        = string
 }
 
 variable "project_name" {
-  default     = "tcb-project-371706"
+  default     = "airbyte-project-371706"
   description = "Google Cloud Platform Project Name"
   type        = string
 }
