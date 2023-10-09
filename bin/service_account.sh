@@ -1,8 +1,25 @@
 #!/bin/bash
 
+# Required .env variables:
+# - PROJECT_ID
+# - PROJECT_NAME
+# - BILLING_ACCOUNT
+
 set -euo pipefail
 
-# Load variables from terraform.tvars
+# Check if necessary variables are set.
+if [ -z "${PROJECT_ID}" ]; then 
+  echo "PROJECT_ID variable not set.";
+  exit 1
+elif [ -z ${PROJECT_NAME} ]; then
+  echo "PROJECT_NAME variable not set.";
+  exit 1
+elif [ -z ${BILLING_ACCOUNT} ]; then
+  echo "BILLING_ACCOUNT variable not set.";
+  exit 1
+fi
+
+# Load variables from .env
 source .env
 
 # Check if the project exists
@@ -55,3 +72,5 @@ else
 
   echo "Service account created"
 fi
+
+EOF
